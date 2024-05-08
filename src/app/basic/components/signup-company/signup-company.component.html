@@ -1,0 +1,57 @@
+<div class="bg">
+
+    <div class="parent">
+        <div class="child">
+            <div nz-col>
+                <h1 style="margin-left: 55px">Registro Ponente</h1>
+              </div>
+
+              <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+
+                <nz-form-item>
+                    <nz-form-control nzHasFeedback nzErrorTip="El email ingresado no es válido!">
+                        <input nz-input placeholder="E-mail" formControlName="email" id="email" />
+                    </nz-form-control>
+                </nz-form-item>
+                <nz-form-item>
+                    <nz-form-control nzHasFeedback nzErrorTip="La contraseña ingresada no es válida!">
+                        <input nz-input type="password" placeholder="Contraseña" formControlName="password" id="email" />
+                    </nz-form-control>
+                </nz-form-item>
+
+                <nz-form-item>
+                    <nz-form-control nzHasFeedback nzErrorTip="La contraseña ingresada no es válida!">
+                        <input nz-input type="password" placeholder="Confirmar Contraseña" formControlName="checkPassword" id="email" />
+                    </nz-form-control>
+                </nz-form-item>
+
+
+                <nz-form-item>
+                    <nz-form-control nzHasFeedback nzErrorTip="El nombre ingresado no es válido!">
+                        <input nz-input placeholder="Nombre" formControlName="name" id="email" />
+                    </nz-form-control>
+                </nz-form-item>
+
+                <nz-form-item>
+                    <nz-form-control nzHasFeedback nzErrorTip="La dirección ingresada no es válida!">
+                        <input nz-input placeholder="Dirección" formControlName="address" id="email" />
+                    </nz-form-control>
+                </nz-form-item>
+
+                <nz-form-item>
+                    <nz-form-control nzHasFeedback nzErrorTip="El telefono ingresado no es válido!!">
+                        <input nz-input placeholder="Telefono" formControlName="phone" id="email" />
+                    </nz-form-control>
+                </nz-form-item>
+
+                <button nz-button class="login-form-button login-form-margin" [nzType]="'primary'">
+                    Registro
+                  </button>
+                  O <a routerLink="/login"> Login! </a>
+
+              </form>
+
+        </div>
+    </div>
+
+</div>
