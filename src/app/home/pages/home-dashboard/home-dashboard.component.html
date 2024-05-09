@@ -1,0 +1,21 @@
+
+<nz-carousel nzAutoPlay>
+  <div nz-carousel-content *ngFor="let item of array">
+    <img [src]='item.imageUrl'/>
+    <h3>{{item.title}}</h3>
+  </div>
+</nz-carousel>
+
+<div class="container">
+  <div class="filtroClubes">
+    <button nz-button nzType="primary">Primary</button>
+    <button nz-button nzType="primary">Primary</button>
+    <button nz-button nzType="primary">Primary</button>
+    <button nz-button nzType="primary">Primary</button>
+  </div>
+  <div class="filtroTipo">
+
+  </div>
+  <div class="filtroFecha">
+  </div>
+</div>
