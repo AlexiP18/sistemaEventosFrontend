@@ -11,7 +11,8 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent},
   { path: 'register', component: SingupComponent},
   { path: 'company', loadChildren: () => import('./company/company.module').then(m => m.CompanyModule) }, 
-  { path: 'client', loadChildren: () => import('./client/client.module').then(m => m.ClientModule) }];
+  { path: 'client', loadChildren: () => import('./client/client.module').then(m => m.ClientModule) },
+  { path: 'home', loadChildren: () => import('./home/home.module').then(m => m.HomeModule) }];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

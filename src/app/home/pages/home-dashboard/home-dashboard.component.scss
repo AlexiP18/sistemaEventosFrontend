@@ -1,0 +1,35 @@
+
+[nz-carousel-content] {
+  text-align: center;
+  height: 160px;
+  line-height: 160px;
+  background: #364d79;
+  color: #fff;
+  overflow: hidden;
+}
+
+img {
+  width: 300px;
+  height: 400px;
+  max-width: 500px;
+  max-height: 500px;
+  object-fit: contain;
+}
+
+h3 {
+  color: #fff;
+  margin-bottom: 0;
+  user-select: none;
+}
+
+@media only screen and (max-width: 600px) {
+  nz-carousel {
+    height: 200px;
+    width: 400px;
+  }
+
+  img {
+    height: 200px;
+    width: 400px;
+  }
+}
