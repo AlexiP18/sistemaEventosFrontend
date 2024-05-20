@@ -13,7 +13,7 @@ export class UpdateTaskComponent {
 
   taskForm: FormGroup;
   listOfEmployees: any = [];
-  listOfPriorities: any = ["LOW", "MEDIUM", "HIGH"];
+  listOfPriorities: any = ["BAJA", "MEDIO", "ALTO"];
   listOfTaskStatus: any = ["PENDING", "INPROGRESS", "COMPLETED", "DEFERRED", "CANCELLED"];
   id: number = this.activatedRoute.snapshot.params['id'];
 
@@ -57,7 +57,7 @@ export class UpdateTaskComponent {
           this.snackBar.open('Task updated successfully', 'Close', {
             duration: 5000
           });
-          this.router.navigateByUrl('/admin/dashboard');
+          this.router.navigateByUrl('/project-task/dashboard');
         } else {
           this.snackBar.open(res.message, 'ERROR', {
             duration: 5000

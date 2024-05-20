@@ -31,7 +31,7 @@ export class ClientService {
   }
 
   bookService(bookDTO:any): Observable<any>{
- 
+
     return this.http.post(BASIC_URL + `api/client/book-service`, bookDTO , {
       headers : this.createAuthorizationHeader()
     })
@@ -57,4 +57,41 @@ export class ClientService {
       'Bearer ' + UserStoargeService.getToken()
     )
   }
+
+  getTasksByUserId(): Observable<any> {
+    return this.http.get(BASIC_URL + `api/client/tasks/${UserStoargeService.getUserId()}`, {
+      headers: this.createAuthorizationHeader(),
+    })
+  }
+
+  updateTask(id: number, status: any): Observable<any> {
+    return this.http.get(BASIC_URL + `api/client/task/${id}/${status}`, {
+      headers: this.createAuthorizationHeader(),
+    })
+  }
+
+  getTaskById(id: number): Observable<any> {
+    return this.http.get(BASIC_URL + `api/client/task/${id}`, {
+      headers: this.createAuthorizationHeader(),
+    })
+  }
+
+  createComment(taskId: number, content: string): Observable<any> {
+    const params = {
+      taskId: taskId,
+      postedBy: UserStoargeService.getUserId(),
+    };
+    return this.http.post<any>(BASIC_URL + `api/client/comments/create`, content,
+     {
+      params: params,
+      headers: this.createAuthorizationHeader(),
+    });
+  }
+
+  getAllCommentsByTaskId(taskId: number): Observable<any> {
+    return this.http.get<any>(BASIC_URL + `api/client/comments/${taskId}`, {
+      headers: this.createAuthorizationHeader(),
+    });
+  }
+
 }

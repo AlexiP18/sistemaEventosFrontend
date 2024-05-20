@@ -23,6 +23,7 @@
     <div class="nav-links">
       <a nz-button nzType="link" routerLink="/client/dashboard" routerLinkActive="active">Menú</a>
       <a nz-button nzType="link" routerLink="/client/bookings" routerLinkActive="active">Reservas</a>
+      <a nz-button nzType="link" routerLink="/client/task/dashboard" routerLinkActive="active">Mis Proyectos</a>
       <a nz-button nzType="link" (click)="logout()" routerLinkActive="active">Logout</a>
     </div>
   </nz-header>
@@ -34,6 +35,9 @@
       </li>
       <li nz-menu-item>
         <a nz-button nzType="link" routerLink="/client/bookings" routerLinkActive="active">Reservas</a>
+      </li>
+      <li nz-menu-item>
+        <a nz-button nzType="link" routerLink="/client/task/dashboard" routerLinkActive="active">Mis Proyectos</a>
       </li>
       <li nz-menu-item>
         <a nz-button nzType="link" (click)="logout()" routerLinkActive="active">Logout</a>
@@ -68,6 +72,12 @@
       </li>
       <li nz-menu-item>
         <a nz-button nzType="link" routerLink="/company/ads" routerLinkActive="active">Eventos</a>
+      </li>
+      <li nz-menu-item>
+        <a nz-button nzType="link" routerLink="/project-task/task/post" routerLinkActive="active">Añadir Proyecto</a>
+      </li>
+      <li nz-menu-item>
+        <a nz-button nzType="link" routerLink="/project-task/dashboard" routerLinkActive="active">Proyectos</a>
       </li>
       <li nz-menu-item>
         <a nz-button nzType="link" (click)="logout()" routerLinkActive="active">Logout</a>

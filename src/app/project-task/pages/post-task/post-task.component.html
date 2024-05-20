@@ -30,21 +30,19 @@
                   {{priority}}
               </mat-option>
           </mat-select>
-          <mat-error *ngIf="taskForm.get('userId')?.hasError('required')">This Input Is
-              Required!</mat-error>
+          <mat-error *ngIf="taskForm.get('userId')?.hasError('required')">Este campo es requerido!</mat-error>
       </mat-form-field>
 
       <mat-form-field appearance="outline" class="form-field">
-          <mat-label>Select the Employee</mat-label>
+          <mat-label>Seleccione un Integrante</mat-label>
           <mat-select formControlName="employeeId" name="employeeId">
               <mat-option *ngFor="let employee of listOfEmployees" [value]="employee.id">
                   {{employee.name}}
               </mat-option>
           </mat-select>
-          <mat-error *ngIf="taskForm.get('userId')?.hasError('required')">This Input Is
-              Required!</mat-error>
+          <mat-error *ngIf="taskForm.get('userId')?.hasError('required')">Este campo es requerido!</mat-error>
       </mat-form-field>
 
-      <button mat-raised-button color="primary" type="submit" [disabled]="taskForm.invalid">Post Task</button>
+      <button mat-raised-button color="primary" type="submit" [disabled]="taskForm.invalid">Agregar Proyecto</button>
   </form>
 </div>

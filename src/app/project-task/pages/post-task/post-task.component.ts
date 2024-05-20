@@ -44,10 +44,10 @@ export class PostTaskComponent {
       this.projectTaskService.postTask(this.taskForm.value).subscribe((res) => {
         console.log(res);
         if (res.id != null) {
-          this.snackBar.open('Task posted successfully', 'Close', {
-            duration: 5000
+          this.snackBar.open('Proyecto Agregado Exitosamente', 'Cerrar', {
+            duration: 3000
           });
-          this.router.navigateByUrl('/admin/dashboard');
+          this.router.navigateByUrl('/project-task/dashboard');
         } else {
           this.snackBar.open(res.message, 'ERROR', {
             duration: 5000

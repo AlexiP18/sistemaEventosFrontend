@@ -9,6 +9,9 @@ import { DemoNgZorroAntdModule } from '../DemoNgZorroAntdModule';
 import { AdDetailComponent } from './pages/ad-detail/ad-detail.component';
 import { MyBookingsComponent } from './pages/my-bookings/my-bookings.component';
 import { ReviewComponent } from './pages/review/review.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { DemoAngularMaterailModule } from '../DemoAngularMaterialModule';
+import { ViewTaskDetailsComponent } from './pages/view-task-details/view-task-details.component';
 
 
 @NgModule({
@@ -17,14 +20,17 @@ import { ReviewComponent } from './pages/review/review.component';
     ClientDashboardComponent,
     AdDetailComponent,
     MyBookingsComponent,
-    ReviewComponent
+    ReviewComponent,
+    DashboardComponent,
+    ViewTaskDetailsComponent
   ],
   imports: [
     CommonModule,
     ClientRoutingModule,
     DemoNgZorroAntdModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    DemoAngularMaterailModule,
   ]
 })
 export class ClientModule { }

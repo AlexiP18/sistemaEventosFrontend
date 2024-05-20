@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';
-import { ProjectTaskService } from '../../services/project-task.service';
+import { ClientService } from '../../services/client.service';
 
 @Component({
   selector: 'app-view-task-details',
@@ -20,7 +20,7 @@ export class ViewTaskDetailsComponent {
     private activatedRoute: ActivatedRoute,
     private matSnackBar: MatSnackBar,
     private fb: FormBuilder,
-    private projectTaskService: ProjectTaskService) { }
+    private clientService: ClientService) { }
 
   ngOnInit() {
     this.commentForm = this.fb.group({
@@ -30,23 +30,23 @@ export class ViewTaskDetailsComponent {
   }
 
   getTaskById() {
-    this.projectTaskService.getTaskById(this.taskId).subscribe(res => {
+    this.clientService.getTaskById(this.taskId).subscribe(res =>{
       this.taskData = res;
       console.log(this.taskData);
       this.getCommentsByPost();
-    }, error => {
+    }, error =>{
       this.matSnackBar.open("Algo salió mal!!!!", "Ok")
     })
   }
 
   publishComment() {
-    this.projectTaskService.createComment(this.taskId, this.commentForm.get('content')?.value
+    this.clientService.createComment(this.taskId, this.commentForm.get('content')?.value
 
     ).subscribe(
       (response) => {
         // Handle the response as needed
         console.log('Comment created successfully:', response);
-        this.matSnackBar.open("Comentario publicado exitosamente", "Ok");
+        this.matSnackBar.open("Comentario Publicado Exitosamente", "Ok");
         this.getCommentsByPost();
       },
       (error) => {
@@ -58,7 +58,7 @@ export class ViewTaskDetailsComponent {
   }
 
   getCommentsByPost() {
-    this.projectTaskService.getAllCommentsByTaskId(this.taskId).subscribe(res => {
+    this.clientService.getAllCommentsByTaskId(this.taskId).subscribe(res => {
       this.comments = res;
       console.log(this.comments)
     }, error => {

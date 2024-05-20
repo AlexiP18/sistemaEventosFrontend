@@ -41,7 +41,7 @@ export class DashboardComponent {
   deleteTask(id: number): void {
     this.projectTaskService.deleteTask(id).subscribe((res) => {
       this.snackBar.open('Proyecto eliminado correctamente', 'Cerrar', {
-        duration: 5000
+        duration: 3000
       });
       this.getAllTasks();
     })
