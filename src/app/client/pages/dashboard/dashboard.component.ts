@@ -27,7 +27,7 @@ export class DashboardComponent {
     this.clientService.updateTask(id, status).subscribe((res) => {
       console.log(res);
       if (res.id != null) {
-        this.snackBar.open('Estado de Tarea Actualizado', 'Cerrar', {
+        this.snackBar.open('Estado de Proyecto Actualizado', 'Cerrar', {
           duration: 5000
         });
         this.getTasksByUserId();

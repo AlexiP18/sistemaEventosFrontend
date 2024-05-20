@@ -54,7 +54,7 @@ export class UpdateTaskComponent {
     if (this.taskForm.valid) {
       this.projectTaskService.updateTask(this.id, this.taskForm.value).subscribe((res) => {
         if (res.id != null) {
-          this.snackBar.open('Task updated successfully', 'Close', {
+          this.snackBar.open('Tarea actualizada exitosamente', 'Cerrar', {
             duration: 5000
           });
           this.router.navigateByUrl('/project-task/dashboard');
