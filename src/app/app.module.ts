@@ -15,6 +15,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DemoNgZorroAntdModule } from './DemoNgZorroAntdModule';
 import { SignupClientComponent } from './basic/components/signup-client/signup-client.component';
 import { SignupCompanyComponent } from './basic/components/signup-company/signup-company.component';
+import { DemoAngularMaterailModule } from './DemoAngularMaterialModule';
 
 registerLocaleData(en);
 
@@ -33,6 +34,7 @@ registerLocaleData(en);
     HttpClientModule,
     BrowserAnimationsModule,
     DemoNgZorroAntdModule,
+    DemoAngularMaterailModule,
     ReactiveFormsModule
   ],
   providers: [
