@@ -8,46 +8,45 @@ import { UserStoargeService } from '../../services/storage/user-stoarge.service'
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent {
-
   validateForm!: FormGroup;
 
-  constructor(private fb: FormBuilder,
+  constructor(
+    private fb: FormBuilder,
     private authService: AuthService,
     private notification: NzNotificationService,
-    private router: Router,
+    private router: Router
+  ) {}
 
-    ){
-
-  }
-
-  ngOnInit(){
+  ngOnInit() {
     this.validateForm = this.fb.group({
-      userName : [null, [Validators.required]],
-      password : [null, [Validators.required]],
-    })
+      userName: [null, [Validators.required]],
+      password: [null, [Validators.required]],
+    });
   }
 
-
-  submitForm(){
-    this.authService.login(this.validateForm.get(['userName'])!.value, this.validateForm.get(['password'])!.value)
-    .subscribe(res =>{
-      console.log(res);
-      if(UserStoargeService.isClientLoggedIn()){
-        this.router.navigateByUrl('client/dashboard')
-      }else if(UserStoargeService.isCompanyLoggedIn()){
-        this.router.navigateByUrl('company/dashboard')
-      }
-    }, error =>{
-      this.notification
-      .error(
-        'ERROR',
-        `Credenciales Incorrectas`,
-        { nzDuration: 5000 }
+  submitForm() {
+    this.authService
+      .login(
+        this.validateForm.get(['userName'])!.value,
+        this.validateForm.get(['password'])!.value
       )
-    })
+      .subscribe(
+        (res) => {
+          console.log(res);
+          if (UserStoargeService.isClientLoggedIn()) {
+            this.router.navigateByUrl('client/dashboard');
+          } else if (UserStoargeService.isCompanyLoggedIn()) {
+            this.router.navigateByUrl('company/dashboard');
+          }
+        },
+        (error) => {
+          this.notification.error('ERROR', `Credenciales Incorrectas`, {
+            nzDuration: 5000,
+          });
+        }
+      );
   }
-
 }
